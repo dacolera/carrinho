@@ -21,3 +21,19 @@ $factory->define(Ecommerce\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(Ecommerce\Produtos::class, function (Faker\Generator $faker) {
+
+    return [
+        'nome' => $faker->firstname,
+        'descricao' => $faker->text,
+        'id_categoria' => $faker->numberBetween(1, 10),
+        'preco' => $faker->randomFloat(2, 23, 4000)
+    ];
+});
+
+$factory->define(Ecommerce\Categorias::class, function (Faker\Generator $faker) {
+    return [
+        'nome' => $faker->firstname  
+    ];
+});
