@@ -15,4 +15,12 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/produtos/listagem', 'ProdutosController@index');
+Route::get('/produtos/listagem', ['as' => 'produtos.listagem', 'middleware' => 'auth', 'uses' => 'ProdutosController@index']);
+
+Route::get('/login', function () {
+    return view('auth.login');
+});
+
+Route::get('auth/logout', ['as' => 'auth.logout', 'uses' => 'UsuarioController@logout']);
+
+Route::post('/auth/login', ['as' => 'auth.login', 'uses' => 'UsuarioController@login']);
