@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Ecommerce\User as Usuario;
 
-class DatabaseSeeder extends Seeder
+class Users extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,8 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call(Users::class);
-         $this->call(Produtos::class);
-         $this->call(Categorias::class);
+        factory(Usuario::class, 100)->create();
     }
 }
