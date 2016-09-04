@@ -108,3 +108,181 @@
     top: 5px;
     border-radius:1px;
 }
+
+.carrinho {
+	margin-bottom: 130px;
+}
+.carrinho .menu {
+	border: 1px solid #D4D4D4;
+	border-bottom: 0px;
+    margin-bottom: 7px;
+}
+.carrinho .menu .item {
+	font-size: 18px;
+    color: #88888A;
+	border-bottom: 1px solid #D4D4D4;
+	padding: 6px 0px;
+	padding-left: 17px;
+}
+.carrinho .menu .sub-menu {
+	font-size: 18px;
+    color: #88888A;
+	border-bottom: 1px solid #D4D4D4;
+	padding: 6px 0px;
+}
+.carrinho .menu .sub-menu p {
+	padding-left: 19px;
+    color: #88888A;
+    height: 18px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    line-height: 21px;
+}
+.carrinho .menu .sub-menu.ativo p {
+	padding-left: 12px;
+    color: #272E62;
+    font-weight: bold;
+    border-left: 7px solid #2E3979;
+}
+.carrinho .menu .sub-item {
+	font-size: 18px;
+    color: #88888A;
+    border-bottom: 1px solid #D4D4D4;
+    padding: 6px 0px;
+    background-color: #F5F5F5;
+}
+.carrinho .menu .sub-item p {
+	padding-left: 12px;
+    color: #88888A;
+    border-left: 4px solid #C6C6C6;
+    height: 18px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    line-height: 21px;
+}
+.carrinho .banner {
+	margin: 0 auto;
+}
+.carrinho .painel h1 {
+	font-size: 39px;
+    color: #272E62;
+    margin-top: 36px;
+    margin-bottom: 46px;
+}
+.carrinho .painel .table th {
+	text-align: center;
+    color: #272E62;
+    font-weight: bold;
+    border: 1px solid #272E62;
+    border-right: 1px solid #D6D6D6;
+	height: 41px;
+    line-height: 25px;
+}
+.carrinho .painel .table th:last-child {
+    border-right: 1px solid #272E62;
+}
+.carrinho .painel .table td {
+	text-align: center;
+    color: #272E62;
+    font-weight: bold;
+    border: 1px solid #D6D6D6;
+	color: #ACACAC;
+	height: 41px;
+    line-height: 25px;
+}
+.carrinho .painel .table td.valor {
+    font-weight: normal;
+	font-size: 20px;
+}
+.carrinho .painel .table td.btn-excluir {
+	background: url('/images/carrinho-excluir.png') no-repeat center center;
+	width: 45px
+}
+.carrinho .painel .table td.produto {
+	padding-top: 16px;
+}
+.carrinho .painel .table td.produto img {
+	float: left;
+    margin-right: 13px;
+}
+.carrinho .painel .table td .preco {
+	padding-top: 26px;
+    font-size: 20px;
+    font-weight: normal;
+}
+.carrinho .painel .table td .operacao {
+	width: 87px;
+    margin: 0 auto;
+    padding-top: 8px;
+}
+.carrinho .painel .table td .subtrair {
+	float: left;
+    width: 18px;
+    height: 18px;
+    background-color: #747A9A;
+    color: #fff;
+    line-height: 16px;
+    font-size: 19px;
+    margin-top: 20px;
+}
+.carrinho .painel .table td .quantidade {
+	float: left;
+    margin-top: 20px;
+    border: 0px;
+    height: 18px;
+    text-align: center;
+    width: 49px;
+    line-height: 20px;
+}
+.carrinho .painel .table td .somar {
+	float: left;
+    width: 18px;
+    height: 18px;
+    background-color: #747A9A;
+    color: #fff;
+    line-height: 19px;
+    font-size: 19px;
+    margin-top: 20px;
+	font-weight: normal;
+}
+.carrinho .painel .table td.subtotal {
+	font-size: 24px;
+    color: #272E62;
+    font-weight: normal;
+    padding-top: 34px;
+}
+.carrinho .painel .table .info {
+	float: left;
+}
+.carrinho .painel .table .info .nome {
+	font-size: 16px;
+    font-weight: normal;
+    color: #7D7D7D;
+    margin-bottom: 3px;
+}
+.carrinho .painel .table .info .codigo {
+	float: left;
+    margin-left: 5px;
+    font-size: 12px;
+}
+.carrinho .painel .total {
+	font-size: 28px;
+    color: #272E62;
+	text-align: right;
+	margin-bottom: 28px;
+}
+.carrinho .painel .continuar {
+	float: left;
+    margin-right: 100px;
+	margin-top: 10px;
+    font-size: 17px;
+    color: #272E62;
+}
+.carrinho .painel .btn-azul {
+	float: right;
+    width: 190px;
+    height: 41px;
+    line-height: 34px;
+}
+
+.right {float:right;}
