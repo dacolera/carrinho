@@ -19,6 +19,8 @@ Route::get('/produtos/listagem/{catId?}', ['as' => 'produtos.listagem', 'middlew
 
 Route::get('/produtos/carrinho', ['as' => 'produtos.carrinho', 'middleware' => 'auth', 'uses' => 'ProdutosController@carrinho']);
 
+Route::get('/addcarrinho/{id}', ['as' => 'addcarrinho', 'middleware' => 'auth', 'uses' => 'ProdutosController@addCarrinho']);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

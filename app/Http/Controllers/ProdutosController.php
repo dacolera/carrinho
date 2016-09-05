@@ -12,15 +12,10 @@ class ProdutosController extends Controller
 {
     public function index(Request $request, $catId = null)
     {
-        $search = $request->get('search', null);
+        $search = $request->get('search', "");
 
-        if (null !== $search) {
-            $produtos = 
-            ProdutosModel::where(
-                'nome', 'like', "%{$search}%"
-            )
-            ->orWhere('descricao', 'like', "%{$search}%")
-            ->paginate(12);
+        if ("" !== $search) {
+            $produtos = ProdutosModel::search($search)->paginate(12);
         } else if (null !== $catId) {
             $produtos = 
             ProdutosModel::where(
@@ -30,10 +25,6 @@ class ProdutosController extends Controller
         } else {
             $produtos = ProdutosModel::paginate(12);
         }
-        
-        foreach ($produtos as $produto) {
-            Redis::set('produto:'. $produto->id, $produto->nome);
-        }
 
         $categorias = (new Categorias)->getCategorias();
         return view('produtos.listagem', ['produtos' => $produtos, 'categorias' => $categorias, 'search' => $search]);
@@ -41,6 +32,27 @@ class ProdutosController extends Controller
 
     public function carrinho(Request $request)
     {
-        return view('produtos.carrinho');   
+        return view('produtos.carrinho', ['produtosCarrinho' => Session('carrinho')]);   
+    }
+
+    public function addCarrinho(Request $request, $id)
+    {
+        if (Session('carrinho.'.$id)) {
+            Session([
+                'carrinho.'.$id.'.quantidade' =>
+                (Session('carrinho.'.$id.'.quantidade') + 1)
+            ]);
+        } else {
+            $produto = ProdutosModel::where('id', $id)->first();
+            $prod_atributes = [
+                'id' => $produto->id,
+                'nome' => $produto->nome,
+                'preco' => $produto->preco
+            ];
+            Session(['carrinho.'.$id => $prod_atributes]);
+            Session(['carrinho.'.$id.'.quantidade' => 1]);
+        }
+        $request->session()->flash('success', 'Produto adicionado ao carrinho !');
+        return redirect('produtos/listagem');
     }
 }

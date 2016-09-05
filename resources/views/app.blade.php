@@ -42,6 +42,8 @@
 						<li><a href="{{ url('/register') }}">Register</a></li>
 
 					@else
+						<li><a href="{{ url('produtos/carrinho') }}"><span>{{ count(Session('carrinho', 0)) }} itens</span><img src="{{ asset('carrinho.jpeg') }}" width="40" height="25" /></a>
+						</li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
@@ -60,5 +62,9 @@
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+	<script src="{{ asset('/js/app.js') }}"></script>
+
 </body>
 </html>

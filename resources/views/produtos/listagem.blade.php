@@ -21,13 +21,9 @@
         <div class="row">
             <div class="col-md-4 col-md-offset-8">
                 <div class="panel panel-default">
-                    <div class="panel-body" style="padding: 10px 0 21px 100px;">
+                    <div class="panel-body">
                         <div class="search">
-                            <form action="{{ url('/produtos/listagem') }}" method="get">
-                                {{ csrf_field() }}
-                                <input type="text" name="search" class="form-control input-sm" maxlength="64" placeholder="Busca" value="{{ $search }}" />
-                                <button type="submit" class="btn2 btn-primary btn-sm">Busca</button>
-                            </form>
+                            <input type="text" name="search" class="form-control input-sm" id="search-input" maxlength="64" placeholder="Busca" value="{{ $search }}" />
                         </div>
                     </div>
                 </div>
@@ -36,20 +32,23 @@
     </div>
     <div class="row-fluid">
         <div class="container">
+        @if(Session::has('success'))
+        <div class="alert alert-success temp">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            {{ Session('success') }} 
+        </div>
+        @endif
             <div id="listagem" class="col-md-10" style="display:block;">
                 <div class="lista-produtos">
-                @if($produtos)
+                @if($produtos->count())
                     @foreach($produtos as $produto)
                     <div class="col-md-3">
                         <div class="produto" idProduto="{{ $produto->id }}">
-                            <a href="#">
+                            <a href="/addcarrinho/{{ $produto->id }}">
                                 <img src="{{ asset('/acucar.png') }}" class="img" width="130"/>
                                 <p class="nome">{{ $produto->nome }}</p>
                                 <p class="preco">R$ {{ $produto->preco }}</p>
                             </a>
-                            <div class="opcoes-de-compra">
-                                <div class="button-container" style="opacity: 0;"><button type="button" class="buy-button btn btn-success" data-sku="35283" data-product="2033628" data-seller="1" data-available="true" data-skipservice="true" data-departmentid="4699" data-categoryid="4703" data-subcategoryid="4738"><span class="icon" style="opacity: 0;"></span></button></div>
-                            </div>
                         </div>
                     </div>
                     @endforeach
@@ -72,7 +71,7 @@
                         <div class="col-md-8 col-md-offset-2">
                             <div class="panel panel-default">
                                 <div class="panel-body">
-                                    Desculpe, não possui produtos.
+                                    Desculpe, esta categoria não possui produtos.
                                 </div>
                             </div>
                         </div>
