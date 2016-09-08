@@ -13,4 +13,9 @@ class Produtos extends Model
     {
         return 'produtos';
     }
+
+    public function enderecos()
+    {
+    	$this->hasMany('Ecommerce\Enderecos');
+    }
 }

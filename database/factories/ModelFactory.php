@@ -37,3 +37,17 @@ $factory->define(Ecommerce\Categorias::class, function (Faker\Generator $faker) 
         'nome' => $faker->firstname  
     ];
 });
+
+$factory->define(Ecommerce\Enderecos::class, function (Faker\Generator $faker) {
+    return [
+        'endereco' => $faker->address,
+        'usuario_id' => $faker->numberBetween(1, 100),
+        'numero' => $faker->buildingNumber,
+        'cep' => $faker->postcode,
+        'bairro' => $faker->city,
+        'cidade' => $faker->city,
+        'estado' => $faker->company,
+        'pais' => $faker->country,
+    ];
+});
+

@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Redis;
 class ProdutosController extends Controller
 {
     public function index(Request $request, $catId = null)
-    {
+    {  
         $search = $request->get('search', "");
 
         if ("" !== $search) {

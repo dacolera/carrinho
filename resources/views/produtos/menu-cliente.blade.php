@@ -1,22 +1,12 @@
 <div class="menu">
-	<a href="/index.php?p=perfil-cliente&m=1">
+	<a href="/usuario/perfil/{{ Auth::id() }}">
     	<div class="sub-menu ativo">
         		Meu Perfil
 		</div>
 	</a>
-	<a href="/index.php?p=perfil-cliente&m=1">
+	<a href="/usuario/pedidos/{{ Auth::id() }}">
     	<div class="item sub-menu ativo">
-        		Meu Carrinho
-		</div>
-	</a>
-	<a href="/index.php?p=perfil-cliente&m=1">
-    	<div class="item sub-menu ativo">
-        		Meu Perfil2
-		</div>
-	</a>
-	<a href="/index.php?p=perfil-cliente&m=1">
-    	<div class="item sub-menu ativo">
-        		Meu Perfil3
+        		Meus Pedidos
 		</div>
 	</a>
 </div>

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class Produtos extends Seeder
+class EnderecosSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class Produtos extends Seeder
      */
     public function run()
     {
-        factory(Ecommerce\Produtos::class, 1500)->create();
+        factory(Ecommerce\Enderecos::class, 100)->create();
     }
 }

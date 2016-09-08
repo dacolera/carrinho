@@ -24,3 +24,5 @@ Route::get('/addcarrinho/{id}', ['as' => 'addcarrinho', 'middleware' => 'auth', 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/usuario/perfil/{id}', ['as' => 'usuario.perfil', 'middleware' => 'auth', 'uses' => 'HomeController@userPerfil']);
