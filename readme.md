@@ -1,8 +1,12 @@
-# Ecommerce Teste
+# Ecommerce Test
 
 Installation
 -----------
 
 ```
-gem install github-markup
+clone this repository
+```
+
+```
+php composer.phar install
 ```
