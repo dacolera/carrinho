@@ -4,7 +4,7 @@
         		Meu Perfil
 		</div>
 	</a>
-	<a href="/usuario/pedidos/{{ Auth::id() }}">
+	<a href="/usuario/pedidos">
     	<div class="item sub-menu ativo">
         		Meus Pedidos
 		</div>

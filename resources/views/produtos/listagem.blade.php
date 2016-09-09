@@ -38,6 +38,12 @@
             {{ Session('success') }} 
         </div>
         @endif
+        @if(Session::has('warning'))
+        <div class="alert alert-warning temp">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            {{ Session('warning') }} 
+        </div>
+        @endif
             <div id="listagem" class="col-md-10" style="display:block;">
                 <div class="lista-produtos">
                 @if($produtos->count())

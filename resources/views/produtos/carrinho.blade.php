@@ -52,7 +52,7 @@
                 <div class="pull-right ajusta-responsivo" style="width:100%;">
                     <a class="btn btn-primary" href="{{ url('produtos/listagem') }}">Continuar Comprando</a>
                     
-                    <div class="btn btn-danger right">Fechar Pedido</div>
+                    <a class="btn btn-danger right" href="{{ url('usuario/endereco-entrega') }}">Fechar Pedido</a>
                 </div>
             </div>
         </div>

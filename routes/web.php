@@ -21,8 +21,16 @@ Route::get('/produtos/carrinho', ['as' => 'produtos.carrinho', 'middleware' => '
 
 Route::get('/addcarrinho/{id}', ['as' => 'addcarrinho', 'middleware' => 'auth', 'uses' => 'ProdutosController@addCarrinho']);
 
+Route::get('/produtos/checkout/{idEndereco}', ['as' => 'produtos.checkout', 'middleware' => 'auth', 'uses' => 'ProdutosController@checkout']);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
 Route::get('/usuario/perfil/{id}', ['as' => 'usuario.perfil', 'middleware' => 'auth', 'uses' => 'HomeController@userPerfil']);
+
+Route::get('/usuario/pedidos', ['as' => 'usuario.pedidos', 'middleware' => 'auth', 'uses' => 'HomeController@meusPedidos']);
+
+Route::get('/usuario/pedido-detalhes/{idPedido}', ['as' => 'usuario.pedido.detalhes', 'middleware' => 'auth', 'uses' => 'HomeController@pedidoDetalhes']);
+
+Route::get('/usuario/endereco-entrega', ['as' => 'usuario.endereco.entrega', 'middleware' => 'auth', 'uses' => 'HomeController@enderecoEntrega']);

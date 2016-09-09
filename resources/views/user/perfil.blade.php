@@ -1,70 +1,79 @@
 @extends('app')
 
 @section('content')
-	<div class="row">
-		<h1>Meu Perfil</h1>
-		<div class="col-md-6">
-			<span>Nome: </span>
-		</div>
-		<div class="col-md-6">
-			{{ $user->name }}
-		</div>
-		<div class="col-md-6">
-			<span>Email: </span>
-		</div>
-		<div class="col-md-6">
-			{{ $user->email }}
-		</div>
-	</div>
+<div class="container-fluid">
+	<h2>Dados Pessoais</h2>
+	<ul class="list-group">
+	    <li class="list-group-item">
+		  	<div class="row">
+		  		<div class="col-md-4">Nome</div>
+		  		<div class="col-md-4 col-md-offset-4">{{ $user->name }}</div>
+			</div>
+		</li>
+	  	<li class="list-group-item">
+	  		<div class="row">
+			  	<div class="col-md-4">Email</div>
+			  	<div class="col-md-4 col-md-offset-4">{{ $user->email }}</div>
+			</div>
+		</li>
+	</ul>
 
 	@if ($user->enderecos)
-	<div class="row">
-		<h1>Enderecos</h1>
+	<div class="container-fluid colored">
+		<h2>Enderecos</h2>
 		@foreach($user->enderecos as $endereco)
-		<div class="col-md-6">
-			<span>Endereco: </span>
-		</div>
-		<div class="col-md-6">
-			{{ $endereco->endereco }}
-		</div>
-		<div class="col-md-6">
-			<span>Numero: </span>
-		</div>
-		<div class="col-md-6">
-			{{ $endereco->numero }}
-		</div>
-		<div class="col-md-6">
-			<span>Complemento: </span>
-		</div>
-		<div class="col-md-6">
-			{{ $endereco->complemento }}
-		</div>
-		<div class="col-md-6">
-			<span>CEP: </span>
-		</div>
-		<div class="col-md-6">
-			{{ $endereco->cep }}
-		</div>
-		<div class="col-md-6">
-			<span>Bairro: </span>
-		</div>
-		<div class="col-md-6">
-			{{ $endereco->bairro }}
-		</div>
-		<div class="col-md-6">
-			<span>Estado: </span>
-		</div>
-		<div class="col-md-6">
-			{{ $endereco->estado }}
-		</div>
-		<div class="col-md-6">
-			<span>Pais: </span>
-		</div>
-		<div class="col-md-6">
-			{{ $endereco->pais }}
-		</div>
+		<ul class="list-group centralizado">
+			<li class="list-group-item">
+				<div class="row">
+					<div class="col-md-4">Endereco</div>
+			  		<div class="col-md-4 col-md-offset-4">{{ $endereco->endereco }}</div>
+			  	</div>
+			</li>
+			<li class="list-group-item">
+			  	<div class="row">
+					<div class="col-md-4">Numero</div>
+			  		<div class="col-md-4 col-md-offset-4">{{ $endereco->numero }}</div>
+			  	</div>
+			</li>
+			<li class="list-group-item">
+			  	<div class="row">
+					<div class="col-md-4">Complemento</div>
+			  		<div class="col-md-4 col-md-offset-4">{{ $endereco->complemento }}</div>
+			  	</div>
+			</li>
+			<li class="list-group-item">
+			  	<div class="row">
+					<div class="col-md-4">CEP</div>
+			  		<div class="col-md-4 col-md-offset-4">{{ $endereco->cep }}</div>
+			  	</div>
+			</li>
+			<li class="list-group-item">
+			  	<div class="row">
+					<div class="col-md-4">Bairro</div>
+			  		<div class="col-md-4 col-md-offset-4">{{ $endereco->bairro }}</div>
+			  	</div>
+			</li>
+			<li class="list-group-item">
+			  	<div class="row">
+					<div class="col-md-4">Estado</div>
+			  		<div class="col-md-4 col-md-offset-4">{{ $endereco->estado }}</div>
+			  	</div>
+			</li>
+			<li class="list-group-item">
+			  	<div class="row">
+					<div class="col-md-4">Cidade</div>
+			  		<div class="col-md-4 col-md-offset-4">{{ $endereco->cidade }}</div>
+			  	</div>
+			</li>
+			<li class="list-group-item">
+			  	<div class="row">
+			  		<div class="col-md-4">Pais</div>
+			  		<div class="col-md-4 col-md-offset-4">{{ $endereco->pais }}</div>
+			  	</div>
+			</li>
+		</ul>
 		@endforeach
 	</div>
 	@endif
-
+</div>
 @endsection

@@ -269,3 +269,16 @@
   font-weight: bold;
   font-style: normal;
 }
+
+.colored {
+	background-color:#eeeeee;
+}
+
+.centralizado {
+	width: 800px;
+	margin:40px auto;
+}
+
+.endereco {
+	margin: 155px 0 0 189px;
+}
