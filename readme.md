@@ -3,15 +3,15 @@
 This Project have:
 -----------
 
-- technologies
+- #technologies
   - Laravel Express 5.3
-  - [PHP 5.6]
-  - [MySQL]
-  - [AngularJs]
-  - [Bootstrap 3]
-  - [Redis]
-  - [Algolia Search]
-  - [jQuery]
+  - PHP 5.6
+  - MySQL
+  - AngularJs
+  - Bootstrap 3
+  - Redis
+  - Algolia Search
+  - jQuery
 
 
 Installation
