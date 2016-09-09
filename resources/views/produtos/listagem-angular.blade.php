@@ -32,11 +32,11 @@
                     <div class="lista-produtos">
                         <div class="hits" ng-repeat="hit in hits">
                             <div class="col-md-3">
-                                <div class="produto" idProduto="">
-                                    <a href="/addcarrinho/">
+                                <div class="produto" idProduto="<% hit.id %>">
+                                    <a href="/addcarrinho/<% hit.id %>">
                                         <img src="{{ asset('/acucar.png') }}" class="img" width="130"/>
-                                        <p class="nome" ng-bind-html="hit._highlightResult.nome.value"></p>
-                                        <p class="preco" ng-bind-html="hit._highlightResult.preco.value">R$ </p>
+                                        <p class="nome"><% hit.nome %></p>
+                                        <p class="preco">R$ <% hit.preco %></p>
                                     </a>
                                 </div>
                             </div>
