@@ -3,7 +3,7 @@
 This Project have:
 -----------
 
-- #technologies
+- **Technologies**
   - Laravel Express 5.3
   - PHP 5.6
   - MySQL
