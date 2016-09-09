@@ -26,4 +26,12 @@ Let artisan do the hard work for you
 php artisan migrate
 php artisan db:seed
 ```
+Sign Up
 
+This project doesn't have a register addresses form yet
+
+Assign some addresses for your user (id 101)
+```
+UPDATE enderecos SET usuario_id = 101 WHERE id IN (10,20,30,40,50);
+```
+Now you're good to go !!!
