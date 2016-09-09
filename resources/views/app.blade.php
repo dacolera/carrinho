@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="algoliaApp">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,7 +42,7 @@
 						<li><a href="{{ url('/register') }}">Register</a></li>
 
 					@else
-						<li><a href="{{ url('produtos/carrinho') }}"><span>{{ count(Session('carrinho', 0)) }} itens</span><img src="{{ asset('carrinho.jpeg') }}" width="40" height="25" /></a>
+						<li><a href="{{ url('produtos/carrinho') }}"><span>{{ count(Session('carrinho')) }} itens</span><img src="{{ asset('carrinho.jpeg') }}" width="40" height="25" /></a>
 						</li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
@@ -63,6 +63,8 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
 	<script src="{{ asset('/js/app.js') }}"></script>
 

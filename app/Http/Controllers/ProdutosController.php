@@ -33,6 +33,13 @@ class ProdutosController extends Controller
         return view('produtos.listagem', ['produtos' => $produtos, 'categorias' => $categorias, 'search' => $search]);
     }
 
+    public function angular()
+    {
+        $produtos = ProdutosModel::paginate(12);
+
+        return view('produtos.listagem-angular', ['produtos' => $produtos]);
+    }
+
     public function carrinho(Request $request)
     {
         return view('produtos.carrinho', ['produtosCarrinho' => Session('carrinho')]);   
