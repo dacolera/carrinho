@@ -3,8 +3,8 @@
 This Project have:
 -----------
 
-- [technologies]
-  - [Laravel Express 5.3]
+- technologies
+  - Laravel Express 5.3
   - [PHP 5.6]
   - [MySQL]
   - [AngularJs]
