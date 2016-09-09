@@ -28,7 +28,7 @@ php artisan db:seed
 ```
 Sign Up
 
-This project doesn't have a register addresses form yet
+This project doesn't have a register addresses form yet, then you have to assign manually
 
 Assign some addresses for your user (id 101)
 ```
