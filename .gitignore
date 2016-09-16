@@ -6,3 +6,5 @@
 Homestead.json
 Homestead.yaml
 .DS_Store
+
+tests/_output/*
