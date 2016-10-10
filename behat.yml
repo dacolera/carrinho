@@ -1,0 +1,15 @@
+default:
+    translation:
+        locale: pt
+    extensions:
+        Laracasts\Behat:
+            env_path: .env.testing
+        Behat\MinkExtension:
+            default_session: laravel
+            laravel: ~
+            javascript_session: selenium2
+            selenium2: ~
+            selenium2:
+                capabilities:
+                  version: ''
+                  proxy:
