@@ -71,7 +71,7 @@
 
    <target name="phpcs" description="Testa o padrão de codificação">
        <phpcodesniffer
-            standard="Symfony2"
+            standard="PSR2"
             showSniffs="true"
             showWarnings="true">
             <fileset dir="${application.library}">
