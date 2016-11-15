@@ -117,7 +117,7 @@
                     <include name="**/*Test.php"/>
                 </fileset>
             </coverage-setup>
-            <phpunit codecoverage="true" bootstrap="${application.tests}/bootstrap.php">
+            <phpunit codecoverage="true" bootstrap="${application.tests}/TestCase.php">
                 <batchtest>
                     <fileset dir="${application.tests}">
                         <include name="**/*Test.php"/>
@@ -130,7 +130,7 @@
                 <report todir="${application.builddir}/coverage"/>
             </coverage-report>
         </then><else>
-            <phpunit codecoverage="false" bootstrap="${application.tests}/bootstrap.php">
+            <phpunit codecoverage="false" bootstrap="${application.tests}/TestCase.php">
                 <batchtest>
                     <fileset dir="${application.tests}">
                         <include name="**/*Test.php"/>
