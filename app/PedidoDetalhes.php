@@ -8,6 +8,6 @@ class PedidoDetalhes extends Model
 {
     public function produto()
     {
-    	return $this->belongsTo('Ecommerce\Produtos');
+        return $this->belongsTo('Ecommerce\Produtos');
     }
 }

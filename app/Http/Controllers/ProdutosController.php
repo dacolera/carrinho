@@ -48,10 +48,12 @@ class ProdutosController extends Controller
     public function addCarrinho(Request $request, $id)
     {
         if (Session('carrinho.'.$id)) {
-            Session([
+            Session(
+                [
                 'carrinho.'.$id.'.quantidade' =>
                 (Session('carrinho.'.$id.'.quantidade') + 1)
-            ]);
+                ]
+            );
         } else {
             $produto = ProdutosModel::where('id', $id)->first();
             $prod_atributes = [
@@ -76,14 +78,14 @@ class ProdutosController extends Controller
 
 
         $carrinho = Session('carrinho');
-//grava pedido
+        //grava pedido
         $pedido = new PedidosModel;
         $pedido->usuario_id = Auth::id();
         $pedido->endereco_id = $idEndereco;
         $pedido->qtd_itens = count($carrinho);
         array_walk(
             $carrinho,
-            function(&$item) {
+            function (&$item) {
                 $item['preco'] *= $item['quantidade'];
             }
         );
@@ -95,7 +97,7 @@ class ProdutosController extends Controller
         );
         $ped = $pedido->save();
 
-//grava detalhes do pedido
+        //grava detalhes do pedido
         $carrinho = Session('carrinho');
         foreach ($carrinho as $produto) {
             $pedidodetalhe = new PedidoDetalhesModel;

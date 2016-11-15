@@ -8,6 +8,6 @@ class Pedidos extends Model
 {
     public function detalhes()
     {
-    	return $this->hasMany('Ecommerce\ProdutoDetalhes');
+        return $this->hasMany('Ecommerce\ProdutoDetalhes');
     }
 }

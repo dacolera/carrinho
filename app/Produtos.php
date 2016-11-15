@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produtos extends Model
 {
-	use Searchable;
+    use Searchable;
 
-	public function searchableAs()
+    public function searchableAs()
     {
         return 'produtos';
     }
 
     public function enderecos()
     {
-    	$this->hasMany('Ecommerce\Enderecos');
+        $this->hasMany('Ecommerce\Enderecos');
     }
 }
