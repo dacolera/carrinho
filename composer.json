@@ -22,7 +22,6 @@
         "behat/mink": "^1.7",
         "behat/mink-extension": "^2.2",
         "laracasts/behat-laravel-extension": "^1.0"
-        "phing/phing": "2.*"
     },
     "autoload": {
         "classmap": [
