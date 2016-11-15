@@ -69,7 +69,7 @@
         </phpmd>
     </target>
 
-   <target name="phpcs" description="Testa o padrão de codificação">
+   <target name="phpcs" >
        <phpcodesniffer
             standard="PSR2"
             showSniffs="true"
@@ -77,10 +77,10 @@
             <fileset dir="${application.library}">
                 <include name="**/*.php"/>
             </fileset>
-            <formatter type="default" usefile="false"/>
+            <formatter type="full" usefile="false"/>
             <formatter type="checkstyle" outfile="${application.builddir}/logs/checkstyle.xml"/>
         </phpcodesniffer>
-   </target>
+    </target>
 
     <target name="phpcpd" description="Testa duplicação de código">
         <phpcpd>
