@@ -8,7 +8,7 @@
     <property name="application.builddir" value="${project.basedir}/build"/>
 
     <target name="build"
-        depends="prepare,lint,phploc,phpcs,phpunit,phpcb"/>
+        depends="prepare,composer,lint,phploc,phpcs,phpunit,phpcb"/>
 
     <target name="clean" description="Limpa os diretórios de artefatos">
         <delete dir="${application.builddir}/api"/>
@@ -24,6 +24,12 @@
         <mkdir dir="${application.builddir}/coverage"/>
         <mkdir dir="${application.builddir}/logs"/>
         <mkdir dir="${application.builddir}/pdepend"/>
+    </target>
+    
+    <target name="composer" description="Installing dependencies" depends="prepare">
+        <delete dir="${project.basedir}/vendor"/>
+        <composer command="install">
+        </composer>
     </target>
 
     <target name="lint">
