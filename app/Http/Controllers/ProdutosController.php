@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class ProdutosController extends Controller
 {
     public function index(Request $request, $catId = null)
-    {  
+    {
         $search = $request->get('search', "");
         if ("" !== $search) {
             $produtos = ProdutosModel::search($search)->paginate(12);
