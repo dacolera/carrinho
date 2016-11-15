@@ -10,19 +10,18 @@ use Ecommerce\PedidoDetalhes as PedidoDetalhesModel;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Auth;
 
-
 class ProdutosController extends Controller
 {
     public function index(Request $request, $catId = null)
     {  
         $search = $request->get('search', "");
-
         if ("" !== $search) {
             $produtos = ProdutosModel::search($search)->paginate(12);
-        } else if (null !== $catId) {
-            $produtos = 
+        } elseif (null !== $catId) {
+            $produtos =
             ProdutosModel::where(
-                'id_categoria', $catId
+                'id_categoria',
+                $catId
             )
             ->paginate(12);
         } else {
@@ -42,7 +41,7 @@ class ProdutosController extends Controller
 
     public function carrinho(Request $request)
     {
-        return view('produtos.carrinho', ['produtosCarrinho' => Session('carrinho')]);   
+        return view('produtos.carrinho', ['produtosCarrinho' => Session('carrinho')]);
     }
 
     public function addCarrinho(Request $request, $id)

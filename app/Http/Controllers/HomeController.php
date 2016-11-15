@@ -35,7 +35,7 @@ class HomeController extends Controller
     {
         $user = User::where('id', $id)->first();
 
-        return view('user.perfil', ['user' => $user]); 
+        return view('user.perfil', ['user' => $user]);
     }
 
     public function meusPedidos()
@@ -58,5 +58,4 @@ class HomeController extends Controller
 
         return view('pedidos.endereco-entrega', ['enderecos' => $enderecos]);
     }
-
 }
